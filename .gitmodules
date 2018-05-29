@@ -1,0 +1,3 @@
+[submodule "P3_DataWranglingOpenStreetMap"]
+	path = P3_DataWranglingOpenStreetMap
+	url = git@github.com:ZenRay/openstreetmap.git
