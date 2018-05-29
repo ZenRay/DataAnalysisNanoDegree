@@ -1,0 +1,194 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+body {
+  padding: 60px 0px 60px 0px;
+}
+
+h3.report {
+  font-weight: normal;
+  font-size: large;
+}
+
+div.loan-doc {
+  height: 200px;
+}
+
+div.loan-map: {
+  height: 750px;
+}
+
+
+/*
+* customize the nav bar
+*/
+
+ul.nav>li>a {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+a.navbar-brand {
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+a.navbar-brand>button {
+  stroke: #adf6dc;
+  font-size: 20px;
+  color: #00ffff;
+  alignment-baseline: text-after-edge;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+button {
+  alignment-baseline: text-after-edge;
+  font-size: 20px;
+}
+
+nav {
+  padding: 0 25% 2% 25%;
+}
+
+
+
+
+/*
+* customize the plot
+*/
+
+div.loan {
+  margin: 70px 0px 0px 0px;
+}
+
+
+h2.loan-title {
+  text-align: center;
+}
+
+circle {
+  fill: red;
+}
+
+circle:hover {
+  fill: blue !important;
+}
+
+
+/*
+* custmize the bar
+*/
+
+rect.bar.bar-target {
+  stroke: white;
+  stroke-width: 1.5;
+  fill: #00ffff;
+}
+
+
+path.map.change-path {
+  fill: #00ffff;
+}
+
+path.map.map-target {
+  fill: #00ff00;
+}
+
+path.map {
+  fill: grey;
+}
+
+path.map: click {
+  fill: red !important;
+}
+
+
+
+/*
+* report the detail information
+*/
+
+.report {
+  font-size: x-large;
+  color: #4285f4;
+}
+
+
+
+/*
+* media query, customize the navbar ,the description and the map
+*/
+
+@media (max-width: 1200px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  div.report-map {
+    position: relative;
+    left: 20px;
+  }
+}
+/*@media (width: 900px) {
+  .container {
+    width : 700px;
+  }
+  div {
+    display: block;
+
+}*/
+
+
+/*@media screen and (max-width: 576px) {
+  .main {
+    padding: 0;
+  }
+  .dropdown-button {
+    margin-top: 5px;
+  }
+
+}
+/*@media screen and (max-width: 576px) {
+  .main {
+    padding: 0;
+  }
+  .dropdown-button {
+    margin-top: 5px;
+  }
+
+}*/

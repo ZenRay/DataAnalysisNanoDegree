@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- viewport and width=device-width, which get more flexible -->
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <title>Data Visualization For Prosper</title>
+  <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="js/d3.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/topojson.js"></script>
+  <!-- <script src="https://d3js.org/topojson.v2.min.js"></script> -->
+  <!-- <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script> -->
+ <!--  <link rel="stylesheet" media="screen and (min-device-width: 800px)" /> -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- use d3 version 4.X and bootstrap-->
+  <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+  <!--   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+  <!-- create the navigation bar -->
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+        <button class="btn btn-default brand" type="button"><span class="glyphicon glyphicon-piggy-bank">ProsperLoanVisualization</span></button>
+      </a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><button type="button" class="btn btn-default">LoanByYear</button></a></li>
+          <li><a href="#"><button type="button" class="btn btn-default">ShowMap</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="loan row"></div>
+  </div>
+
+  <script src="js/interacitve.js"></script>
+  <script src="js/project.js"></script>
+
+  <script type="text/javascript">
+    // use strict model
+    "use strict";
+    // refresh the index page when click the icon
+    function refresh() {
+      window.location.reload();
+    }
+    $("span.glyphicon").click(function(event) {
+      /* refesh on the event */
+      refresh();
+    });
+    /*
+    * wheth the map is show, accordding by the display attribute and
+    *  the showmap icon is clicked
+    */
+    $("#navbar > ul > li:nth-child(2) > a").click(function(event) {
+      if ($("div.loan-map > svg").css("display") === "none") {
+        $("div.loan-map > svg").css("display", "flex");
+      } else {
+        $("div.loan-map > svg").css("display", "none");
+      }
+    });
+  /*
+   * show loan information about every year when click the
+   * LoanByYear
+   */
+  // let loadLoan = false;
+  // $(".loan-year").click((event) => {
+  //   if (!loadLoan) {
+  //     loadLoan = true;
+  //     interactiveYear()
+  //   }
+  // });
+  // call the function about dataActive when click the loanByYear
+    let loadLoan = false;
+
+
+  $("#navbar > ul > li:nth-child(1) > a").click((event) => {
+    if (!loadLoan) {
+      loadLoan = true;
+      interactiveYear()
+    }
+  });
+
+
+  </script>
+</body>
+
+</html>
